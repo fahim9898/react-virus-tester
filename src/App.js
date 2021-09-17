@@ -33,15 +33,7 @@ function isValidSubsequence(string, sequence) {
 }
 
 function App() {
-  let [users, setUsers] = useState([{
-    id: 1,
-    name: 'fahim',
-    blood_composition: 'test',
-  },{
-    id: 2,
-    name: 'fahim',
-    blood_composition: 'crnas',
-  }])
+  let [users, setUsers] = useState([])
   let [virus, setVirus] = useState('coronavirus');
   let [tab, setTab] = useState('test');
 
