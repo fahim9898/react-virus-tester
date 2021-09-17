@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+.content {
+  position: relative;
+  width: calc(100% - 80px);
+  margin-left: 40px;
+  
+  @media (max-width: 600px) {
+    width: calc(100% - 20px);
+    margin-left: 10px;
+  }
+}
+
+
+
+.banner {
+  margin-top: 10px;
+  position: relative;
+  min-height: 100px;
+  border-radius: 20px;
+  background-color: var(--color-green);
+  font-family: 'Roboto', sans-serif;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 90%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    // background-color: var(--color-orange);
+    background-color: white;
+    border-radius: 7px;
+    @media (max-width: 600px) {
+      background-color: transparent;
+    }
+  }
+
+  &>&__heading {
+    color: white;
+    font-size: 4rem;
+    font-weight: 500;
+    padding-top: 30px;
+    padding-left: 29px;
+    padding-bottom: 5px;
+    @media (max-width: 600px) {
+      font-size: 2rem;
+    }
+  }
+  &>&__sub-heading {
+    color: white;
+    font-size: 1rem;
+    padding-left: 29px;
+    padding-bottom: 40px;
+  }
+
+  &>&__virus {
+    display: flex; 
+    position: relative;
+    padding-left: 29px;
+    @media (min-width: 600px) {
+      position: absolute;
+      left: 75%;
+      top: 50%;
+      border-radius: 9px;
+      transform: translate(-50%, -50%); 
+    }
+    .virus-name{ 
+      font-size: 1.5rem;
+      color: white;
+      margin-right: 5px;
+    }
+
+    .edit-user {
+      position     : relative;
+      cursor       : pointer;
+      width        : fit-content;
+      margin-bottom: 25px;
+      
+
+      img {
+        position: relative;
+        top     : 3px;
+        width   : 35px;
+        height  : 35px;
+      }
+    }
+  }
+}

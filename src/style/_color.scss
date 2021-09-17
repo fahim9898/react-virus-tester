@@ -1,0 +1,64 @@
+@mixin defineColorHSL($color, $hue, $saturation, $lightness) {
+  #{$color}       : unquote("hsl(#{$hue}, #{$saturation}, #{$lightness})");
+  #{$color}-hover : unquote("hsl(#{$hue}, #{$saturation}, #{$lightness - 6})");
+  #{$color}-h     : #{$hue};
+  #{$color}-s     : #{$saturation};
+  #{$color}-l     : #{$lightness};
+}
+
+@function alpha($color, $opacity) {
+  $color  : str-replace($color, 'var(');
+  $color  : str-replace($color, ')');
+  $color-h: var(#{$color+'-h'});
+  $color-s: var(#{$color+'-s'});
+  $color-l: var(#{$color+'-l'});
+  @return hsla($color-h, $color-s, $color-l, $opacity);
+}
+
+@function hue($color, $hueMultiplier) {
+  $color  : str-replace($color, 'var(');
+  $color  : str-replace($color, ')');
+  $color-h: var(#{$color+'-h'});
+  $color-s: var(#{$color+'-s'});
+  $color-l: var(#{$color+'-l'});
+  @return hsl(calc(#{$color-h} * #{$hueMultiplier})$color-s, $color-l);
+}
+
+@function lightness($color, $lightnessMultiplier) {
+  $color  : str-replace($color, 'var(');
+  $color  : str-replace($color, ')');
+  $color-h: var(#{$color+'-h'});
+  $color-s: var(#{$color+'-s'});
+  $color-l: var(#{$color+'-l'});
+  @return hsl($color-h, $color-s, calc(#{$color-l} * #{$lightnessMultiplier}));
+}
+
+@function saturation($color, $saturationMultiplier) {
+  $color  : str-replace($color, 'var(');
+  $color  : str-replace($color, ')');
+  $color-h: var(#{$color+'-h'});
+  $color-s: var(#{$color+'-s'});
+  $color-l: var(#{$color+'-l'});
+  @return hsl($color-h, calc(#{$color-s} * #{$saturationMultiplier}), $color-l);
+}
+
+
+// replace substring with another string
+// credits: https://css-tricks.com/snippets/sass/str-replace-function/
+@function str-replace($string, $search, $replace: '') {
+  $index: str-index($string, $search);
+
+  @if $index {
+    @return str-slice($string, 1, $index - 1)+$replace+str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+
+  @return $string;
+}
+
+
+
+:root {
+  @include defineColorHSL(--color-black-main, 218, 23%, 33%);
+  @include defineColorHSL(--color-orange, 20, 100%, 61%);
+  @include defineColorHSL(--color-green, 118, 41%, 62%);
+}

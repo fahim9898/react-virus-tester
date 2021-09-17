@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+.header {
+  position: relative;
+  font-family: 'Pacifico', cursive;
+  font-size: 2rem;
+  padding: 0px 40px;
+  color: var(--color-black-main);
+  
+  @media (max-width: 600px) {
+    padding: 0px 10px;
+  }
+
+  .header__btn {
+    font-family: 'Roboto', sans-serif;
+    float: right;
+    font-size: 1.2rem;
+    vertical-align: middle;
+    padding: 2px 10px;
+    margin-top: 10px;
+    color: white;
+    background-color: var(--color-orange);
+    border-radius: 10px;
+  }
+}
