@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/react-virus-tester/static/css/main.baf4f939.chunk.css",
-    "main.js": "/react-virus-tester/static/js/main.abb38364.chunk.js",
-    "main.js.map": "/react-virus-tester/static/js/main.abb38364.chunk.js.map",
+    "main.js": "/react-virus-tester/static/js/main.47a792f3.chunk.js",
+    "main.js.map": "/react-virus-tester/static/js/main.47a792f3.chunk.js.map",
     "runtime-main.js": "/react-virus-tester/static/js/runtime-main.d69f53fb.js",
     "runtime-main.js.map": "/react-virus-tester/static/js/runtime-main.d69f53fb.js.map",
     "static/js/2.30abfb0c.chunk.js": "/react-virus-tester/static/js/2.30abfb0c.chunk.js",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.d69f53fb.js",
     "static/js/2.30abfb0c.chunk.js",
     "static/css/main.baf4f939.chunk.css",
-    "static/js/main.abb38364.chunk.js"
+    "static/js/main.47a792f3.chunk.js"
   ]
 }
